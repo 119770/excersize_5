@@ -12,12 +12,15 @@ public class AddressBook {
 
         Map<String, String> address = new HashMap<>();
 
-        address.put(person1.getName(), person1.getEmail());
-        address.put(person2.getName(), person2.getEmail());
+        addContact(address, person1);
+        addContact(address, person2);
         System.out.println(address);
 
         searchFor(address);
+    }
 
+    public static void addContact(Map<String, String> a, ContactInformation b) {
+        a.put(b.getName(), b.getEmail());
     }
 
     public static void searchFor(Map<String, String> a) {
@@ -33,7 +36,7 @@ public class AddressBook {
             a.get(name);
 
             System.out.println("The email of the contact is " + a.get(name));
-            
+
         }
     }
 }
